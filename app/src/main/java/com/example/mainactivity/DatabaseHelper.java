@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import data.BmiModel;
+
+import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -51,9 +54,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData(){
         SQLiteDatabase db  = this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY ID DESC", null);
 
         return data;
+    }
+
+    public ArrayList<BmiModel> getDataCorrectly() {
+        SQLiteDatabase db  = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY ID DESC", null);
+        ArrayList<BmiModel> listData = new ArrayList<>();
+
+        while(data.moveToNext()){
+            BmiModel model = new BmiModel();
+            model.setHeight(data.getDouble(data.getColumnIndex(COL3)));
+            model.setWeight(data.getDouble(data.getColumnIndex(COL4)));
+            model.setResult(data.getDouble(data.getColumnIndex(COL2)));
+            model.setId(data.getInt(data.getColumnIndex(COL1)));
+            listData.add(model);
+        }
+        return listData;
     }
 
     public void deleteHistory(){

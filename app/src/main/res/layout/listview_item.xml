@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:text="Height: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHeightTag" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" android:textSize="24sp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+    <TextView
+            android:text="Weight:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewWeightTag"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeightTag" android:layout_marginTop="8dp"
+            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"/>
+    <TextView
+            android:text="Result: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewResultTag"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWeightTag"
+            android:textSize="24sp" android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewResult"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWeight" android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="126dp"
+            android:layout_marginStart="126dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewWeight"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeight"
+            android:layout_marginTop="8dp" android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="126dp"
+            android:layout_marginStart="126dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHeight"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="126dp"
+            android:layout_marginStart="126dp"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="24dp" android:layout_marginStart="24dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp" app:layout_constraintTop_toBottomOf="@+id/textViewResult"
+            android:layout_marginTop="16dp"/>
+</android.support.constraint.ConstraintLayout>
